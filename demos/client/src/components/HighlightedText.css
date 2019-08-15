@@ -1,0 +1,43 @@
+
+
+span {
+    font-size: 21px;
+    padding: 7px;
+}
+
+#highlighted-text-output {
+  line-height: 50px;
+}
+
+.PERSON {
+  background-color: #4DD0E1;
+  /* padding: 7px; */
+}
+
+.ORG {
+  background-color: #5C6BC0;
+}
+
+.DATE {
+  background-color: #81C784;
+}
+
+.NORP {
+  background-color: yellowgreen;
+}
+
+.ORDINAL {
+  background-color: lightcoral;
+}
+
+.TIME {
+  background-color: #DCE775;
+}
+
+.GPE {
+  background-color: #FF7043;
+}
+
+.MONEY {
+    background-color: #FFD600;
+}

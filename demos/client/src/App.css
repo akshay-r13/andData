@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+  background-color: #ffffff;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea, input {
+  outline-color: #ff267c;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 21px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.center {
+  display: block;
+  width: fit-content;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.title-wrapper {
+  margin: 30px auto;
+}
+
+.title-text {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #ff267c;
+}
+
+h1.title-text {
+  font-size: 54px;
+  line-height: 1.333;
+  letter-spacing: .25rem;
+  margin-top: 20;
+  margin-bottom: 20;
+}
+
+h2.title-text {
+  font-size: 36px;
+  line-height: 1.333;
+  letter-spacing: .25rem;
+  margin-top: 20;
+  margin-bottom: 20;
+}
+
+.product-description {
+  text-align: center;
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 2.5rem;
+  line-height: 1.255;
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.legend-container {
+  font-size: 2.5rem;
+  line-height: 1.255;
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.btn-primary {
+  border-radius: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #ff267c;
+  border: none;
+  color: #111111;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+#input-text-area {
+  width: 85%;
+  margin: 30px;
+  height: 500px;
+  resize: none;
+  padding: 10px 15px;
+}
+
+#search-box-wrapper {
+  margin: 30px;
+  border: 1px solid #ff267c;
+  padding: 5px 10px;
+  border-radius: 25px;
+  width: 95%;
+  height: 40px;
+}
+
+#search-box-wrapper:hover {
+  background-color: #ffe6f0;
+  transition: all 200ms ease-in;
+}
+
+#search-box-wrapper > input, button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+#search-box-wrapper > input {
+  width: 90%;
+  height: 100%;
+}
+
+#search-box-wrapper > button {
+  width: 10%;
+  height: 100%;
+}
