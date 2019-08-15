@@ -7,7 +7,7 @@ import detectlanguage
 from googletrans import Translator
 
 detectlanguage.configuration.api_key = "bbb385a240d1d4761d5acf77358ce7eb"
-pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Akshay\AppData\Local\Tesseract-OCR\tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"C:\Users\Akshay\AppData\Local\Tesseract-OCR\tesseract.exe"
 
 def ocr_core(filename):
     """
