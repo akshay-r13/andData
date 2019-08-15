@@ -1,0 +1,3 @@
+.vscode/
+demos/client/node_modules/
+demos/server/__pycache__/
