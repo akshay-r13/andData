@@ -124,3 +124,49 @@ h2.title-text {
   width: 10%;
   height: 100%;
 }
+
+#nav-bar-wrapper {
+  width: 100%;
+  background-color: #111111;
+  height: 100%;
+}
+
+#nav-bar-list {
+  display: inline-block;
+  margin: 0px;
+}
+
+#logo {
+  display: inline-block;
+  max-height: 20px;
+  margin: 10px 20px;
+}
+
+.nav-bar-item {
+  display: inline-block;
+  height: 100%;
+  margin: 0px 0px;
+  padding: 0px;
+}
+
+.nav-bar-item > a {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff267c;
+  text-decoration: none;
+}
+
+.nav-bar-item:hover a {
+  background-color:  #ff267c;
+}
+
+.nav-bar-item:hover a {
+  color: #111111;
+}
+
+.nav-bar-item > a {
+  color: #ff267c;
+}

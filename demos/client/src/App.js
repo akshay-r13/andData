@@ -14,14 +14,17 @@ class App extends Component {
         <div>
           <Router>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Substance</Link>
-              </li>
-              <li>
-                <Link to="/ocr/">Language Detection and OCR</Link>
-              </li>
-            </ul>
+            <div id="nav-bar-wrapper">
+              <img id="logo" src="/logo.png" alt="logo &amp;Data"/>
+              <ul id="nav-bar-list">
+                <li className="nav-bar-item">
+                  <Link to="/">Substance</Link>
+                </li>
+                <li className="nav-bar-item">
+                  <Link to="/ocr/">OCR</Link>
+                </li>
+              </ul>
+            </div>
           </nav>
           <div className="container">
             <Route path="/" exact component={Substance} />

@@ -4,7 +4,9 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import HighlightedText from './HighlightedText';
 import socketIOClient from "socket.io-client";
-const socket = socketIOClient("http://127.0.0.1:5000");
+const socket = socketIOClient("http://104.211.9.147:5000/", {
+  path: '/entity_extractor'
+});
 
 class Substance extends Component {
     constructor() {
@@ -21,6 +23,13 @@ class Substance extends Component {
             this.setState({ annotations: data.tokens }, () => {
               console.log(this.state.annotations);
             });
+        });
+        socket.on('error', (error) => {
+          console.log(error);
+            this.setState({
+              "error": true,
+              "errorMessage": "Unfortunately an error occured, please try again"
+            })
         });
       }
     

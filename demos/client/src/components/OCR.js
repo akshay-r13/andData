@@ -10,6 +10,7 @@ class OCR extends Component {
             resultText: '',
             languageDetected: '',
             translatedText: '',
+            errorMessage: '',
             loading: false
           }
        
@@ -27,7 +28,7 @@ class OCR extends Component {
         });
         const data = new FormData() ;
         data.append('file', this.state.selectedFile);
-        axios.post("http://localhost:5001/upload", data, { // receive two parameter endpoint url ,form data 
+        axios.post("http://104.211.9.147:5001/tamil_ocr/upload", data, { // receive two parameter endpoint url ,form data 
             })
             .then(res => { // then print response status
                 console.log(res.statusText);
@@ -36,9 +37,18 @@ class OCR extends Component {
                     resultText: res.data.extracted_text,
                     languageDetected: res.data.language_detected,
                     translatedText: res.data.translated_text,
-                    loading: false
+                    loading: false,
+                    error: false
                 })
             })
+            .catch(error => {
+                console.log(error);
+                this.setState({
+                    errorMessage: "Unfortunately an error has occured, please try again",
+                    loading: false,
+                    error: true
+                })
+            });
     }
 
     renderResults() {
@@ -48,7 +58,19 @@ class OCR extends Component {
             <div>
                 Loading ...
             </div>);
-        }else if(this.state.languageDetected) {
+        }else if(this.state.error){
+            return(
+                <div id="error-message">
+                    {this.state.errorMessage}
+                </div>
+            );
+        }
+        else if( !this.state.translatedText ){
+            return(<div>
+
+            </div>);
+        }else if(this.state.translatedText[0] != [""]) {
+            console.log(this.state.translatedText);
             return(
                 <div id="ocr-results-div">
                     { this.state.resultText.split("\n").map((i,key) => {
@@ -60,6 +82,12 @@ class OCR extends Component {
                     <br />
                     <br />
                     <b>Translation</b>: {this.state.translatedText}
+                </div>
+            );
+        }else{
+            return(
+                <div id="ocr-results-div">
+                    No text found in image
                 </div>
             );
         }
@@ -85,7 +113,10 @@ class OCR extends Component {
                         <form method="post" action="#" id="#">
                             <div>
                                 <h3 className="center">Upload Your File </h3>
-                                <img src={this.state.fileURL} style={{maxHeight: "300px"}}></img>
+                                { this.state.selectedFile ? 
+                                    (<img id="preview-image" src={this.state.fileURL} style={{maxHeight: "300px", maxWidth: "100%"}} alt="preview" />) 
+                                    : 
+                                    ("") }
                                 <input className="center" type="file" multiple="" onChange={this.onChangeHandler} />
                             </div>
                         </form>
